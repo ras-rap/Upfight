@@ -40,7 +40,7 @@ function WriteText(text: string, x: number, y: number, scale: number) {
         `, SpriteKind.Text)
         //  Determine the character to use for the image
         char = text[i]
-        //  Convert to uppercase for consistency
+        console.logValue("To be rendered", char)
         if (char == "A") {
             char_sprite.setImage(assets.image`
                 A
@@ -190,9 +190,7 @@ let Button_selected = 0
 let BG = sprites.create(assets.image`
     Background
 `, SpriteKind.Background)
-Multiplayer_button = sprites.create(assets.image`
-        Multiplayer button
-    `, SpriteKind.Button)
+Multiplayer_button = sprites.create(assets.image`Multiplayer button`, SpriteKind.Button)
 Multiplayer_button.setScale(3, ScaleAnchor.Middle)
 Multiplayer_button.setPosition(114, 100)
 Play_button = sprites.create(assets.image`
@@ -204,11 +202,21 @@ let start_bg = sprites.create(assets.image`
     bg start
 `, SpriteKind.Background)
 start_bg.setScale(10, ScaleAnchor.Middle)
-WriteText("WIP", 60, 53, 1)
-pause(5000)
+WriteText("RAS", 58, 53, 1)
+pause(2000)
 sprites.destroy(start_bg, effects.disintegrate, 500)
 delete_all_text()
 BG.setScale(10, ScaleAnchor.Middle)
+BG.setPosition(80, 47)
+WriteText("   UPFIGHT", -20, 10, 1)
+WriteText("          PLAY", -150, 60, 1)
+WriteText("              SOON", -140, 60, 1)
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
+    if (Button_selected2 == 0) {
+        console.logValue("Play buttton pressed", true)
+    }
+    
+})
 game.onUpdate(function on_on_update() {
     
 })

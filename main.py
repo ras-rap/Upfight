@@ -35,7 +35,8 @@ def WriteText(text: str, x: number, y: number, scale: number):
         """), SpriteKind.Text)
         # Determine the character to use for the image
         char = text[i]
-        # Convert to uppercase for consistency
+        console.log_value("To be rendered", char)
+
         if char == "A":
             char_sprite.set_image(assets.image("""
                 A
@@ -155,6 +156,7 @@ def WriteText(text: str, x: number, y: number, scale: number):
         console.log_value("Position", char_sprite.left + char_sprite.top)
         i += 1
         char_sprite.set_scale(scale, ScaleAnchor.MIDDLE)
+        
 
 def on_right_pressed():
     global Button_selected2
@@ -181,9 +183,7 @@ Button_selected = 0
 BG = sprites.create(assets.image("""
     Background
 """), SpriteKind.Background)
-Multiplayer_button = sprites.create(assets.image("""
-        Multiplayer button
-    """),
+Multiplayer_button = sprites.create(assets.image("""Multiplayer button"""),
     SpriteKind.Button)
 Multiplayer_button.set_scale(3, ScaleAnchor.MIDDLE)
 Multiplayer_button.set_position(114, 100)
@@ -197,12 +197,22 @@ start_bg = sprites.create(assets.image("""
     bg start
 """), SpriteKind.Background)
 start_bg.set_scale(10, ScaleAnchor.MIDDLE)
-WriteText("WIP", 60, 53, 1)
-pause(5000)
+WriteText("RAS", 58, 53, 1)
+pause(2000)
 sprites.destroy(start_bg, effects.disintegrate, 500)
 delete_all_text()
 BG.set_scale(10, ScaleAnchor.MIDDLE)
+BG.set_position(80, 47)
+WriteText("   UPFIGHT", -20, 10, 1)
+WriteText("          PLAY", -150, 60, 1)
+WriteText("              SOON", -140, 60, 1)
 
 def on_on_update():
     pass
+    
+def on_event_pressed():
+    if Button_selected2 == 0:
+        console.log_value("Play buttton pressed", True)
+
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
 game.on_update(on_on_update)
