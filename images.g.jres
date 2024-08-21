@@ -1,29 +1,4 @@
 {
-    "image1": {
-        "data": "hwQQABAAAAB3d3d3d3d3d3eZl3eXl3l3l5mZmZmZmXeXmZmZmZmZd3eZmZmZmZl3l5mZmZmZmXmXmZmZmZmZeXeZmZmZmZl3d5mZmZmZmXeXmZmZmZmZeZeZmZmZmZl3l5mZmZmZmXmXmZmZmZmZeXeZmZmZmZl5d5eZd5mXeXd3d3d3d3d3dw==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Background"
-    },
-    "image4": {
-        "data": "hwQQABAAAAAAAAAAAAAAAABmZmZmZgYAALa7u7u7BgAAtru7u7sGAAC2u7u7uwYAALZVVVW1BgAAtlVVVbUGAAC2W1VVuwYAALZbVVW7BgAAtrtVtbsGAAC2u1W1uwYAALa7W7u7BgAAtru7u7sGAAC2u7u7uwYAAGZmZmZmBgAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Play button"
-    },
-    "image2": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAREREREQEAAHF3d3d3AQAAcXd3d3cBAABxd3d3dwEAAHGqqqp6AQAAcaqqqnoBAABxp6qqdwEAAHGnqqp3AQAAcXeqencBAABxd6p6dwEAAHF3p3d3AQAAcXd3d3cBAABxd3d3dwEAABERERERAQAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Play button selected"
-    },
-    "image3": {
-        "data": "hwQQABAAAAAAAAAAAAAAAABmZmZmZgYAALa7u7u7BgAAtlVVtbsGAAC2VVW1uwYAALZVu7u7BgAAtlW7W7UGAAC2VbtbtQYAALZVu1u1BgAAtlW7W7UGAAC2u7tbtQYAALa7VVW1BgAAtrtVVbUGAAC2u7u7uwYAAGZmZmZmBgAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Multiplayer button"
-    },
-    "image5": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAREREREQEAAHF3d3d3AQAAcaqqencBAABxqqp6dwEAAHGqd3d3AQAAcap3p3oBAABxqnenegEAAHGqd6d6AQAAcap3p3oBAABxd3enegEAAHF3qqp6AQAAcXeqqnoBAABxd3d3dwEAABERERERAQAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "Multiplayer button selected"
-    },
     "image6": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAgIgIAAAAAICIiAgAAACIiIiICAAAiIiIiAgAAIiIiIiIAACAiIiIgIgAAICIiAiAiAAAgIiIiICIAAAAgIiIiIgAAAAAgIiIiAAAAAAAiIiIiAAAAAAAiIiICAAAAAAAiIgIAAAAAAAAiAgAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -48,11 +23,6 @@
         "data": "hwQQABAAAAAAAAAAAAAAAICIiIiIiIgIgIiIiIiIiAiAiIiIiIiICICIAICIAIgIgIgAgIgAiAiAiACAiACICICIAICIAIgIgIgAgIgAiAiAiACAiACICICIAAAAAIgIgIgAAAAAiAiAiAAAAACICICIAAAAAIgIgIgAAAAAiAgAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "E"
-    },
-    "image11": {
-        "data": "hwQQABAAAAAAAAAAAAAAAICIiIiIiIgIgIiIiIiIiAiAiIiIiIiICICIAIgIAAAAgIgAiAgAAACAiACICAAAAICIAIgIAAAAgIgAiAgAAACAiAAAAAAAAICIAAAAAAAAgIgAAAAAAACAiAAAAAAAAICIAAAAAAAAgIgAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "displayName": "myImage"
     },
     "image13": {
         "data": "hwQQABAAAAAAAAAAAAAAAACAiIiIiAAAAIiIiIiICACAiIiIiIiIAICICACAiIgIgIgIAACAiAiAiAAAAACICICIAAAAAIgIgIgAAAAAiAiAiACIAICICICIAIiIiIgIgIgAiIiIiACAiACIiIgIAICIAIiIiAAAAAAAiAAAAAAAAAAAAAAAAA==",
@@ -153,6 +123,56 @@
         "data": "hwQQABAAAACICAAAAACAiIgIAAAAAIiIiAgAAACAiIiICAAAAIiIiIgIAACAiIiIiAgAAIiIiIiICACAiIiAiIgIAICICICIiAgAiIgAgIiICICIiACAiIgIiIgIAICIiIiIiAAAgIiIiIgIAACAiIiIiAAAAICIiIgIAAAAgIiIiAAAAACAiA==",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Z"
+    },
+    "image1": {
+        "data": "hwQQABAAAAB3d3d3d3d3d3eZl3eXl3l3l5mZmZmZmXeXmZmZmZmZd3eZmZmZmZl3l5mZmZmZmXmXmZmZmZmZeXeZmZmZmZl3d5mZmZmZmXeXmZmZmZmZeZeZmZmZmZl3l5mZmZmZmXmXmZmZmZmZeXeZmZmZmZl5d5eZd5mXeXd3d3d3d3d3dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Background"
+    },
+    "image4": {
+        "data": "hwQQABAAAAAAAAAAAAAAAABmZmZmZgYAALa7u7u7BgAAtru7u7sGAAC2u7u7uwYAALZVVVW1BgAAtlVVVbUGAAC2W1VVuwYAALZbVVW7BgAAtrtVtbsGAAC2u1W1uwYAALa7W7u7BgAAtru7u7sGAAC2u7u7uwYAAGZmZmZmBgAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Play button"
+    },
+    "image2": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAREREREQEAAHF3d3d3AQAAcXd3d3cBAABxd3d3dwEAAHGqqqp6AQAAcaqqqnoBAABxp6qqdwEAAHGnqqp3AQAAcXeqencBAABxd6p6dwEAAHF3p3d3AQAAcXd3d3cBAABxd3d3dwEAABERERERAQAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Play button selected"
+    },
+    "image3": {
+        "data": "hwQQABAAAAAAAAAAAAAAAABmZmZmZgYAALa7u7u7BgAAtlVVtbsGAAC2VVW1uwYAALZVu7u7BgAAtlW7W7UGAAC2VbtbtQYAALZVu1u1BgAAtlW7W7UGAAC2u7tbtQYAALa7VVW1BgAAtrtVVbUGAAC2u7u7uwYAAGZmZmZmBgAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Multiplayer button"
+    },
+    "image5": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAREREREQEAAHF3d3d3AQAAcaqqencBAABxqqp6dwEAAHGqd3d3AQAAcap3p3oBAABxqnenegEAAHGqd6d6AQAAcap3p3oBAABxd3enegEAAHF3qqp6AQAAcXeqqnoBAABxd3d3dwEAABERERERAQAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Multiplayer button selected"
+    },
+    "image32": {
+        "data": "hwQQABAAAAB3d3d3d3d3d2dmZmZmZmZ2Z3d3d3d3d3ZnZ2ZmZmZ2dmdnd3d3d3Z2Z2dnZmZ2dnZnZ2eZmXZ2dmdnZ5mZdnZ2Z2dnmZl2dnZnZ2eZmXZ2dmdnZ2ZmdnZ2Z2d3d3d3dnZnZ2ZmZmZ2dmd3d3d3d3d2Z2ZmZmZmZnZ3d3d3d3d3dw==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "bg start"
+    },
+    "PWc^[H1i@h1i8!)-nD": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIiIiIiACICIiIiIiIAIgIiIiIiIgAiAiIiIiIiACICAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "exm"
+    },
+    "xfZ@O{4YFDM)H^{2%qT`": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICIiAgAAAAAgIiICAAAAACAiIgIAAAAAICIiAgAAAAAgIiICAAAAACAiIgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "period"
+    },
+    "image33": {
+        "data": "hwQQABAAAAAAiAgAAAAAAICICAAAAAAAgIgIAAAAAACAiAgAAAAAAICIAAAAAAAAgIgAAAAAAACAiAAAiAiAiICIiIiICICIgIiIiIgIgIiAiIiIiAAAAACAiAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "question"
+    },
+    "image11": {
+        "data": "hwQQABAAAAAAAAAAAAAAAICIiIiIiIgIgIiIiIiIiAiAiIiIiIiICICIAIgIAAAAgIgAiAgAAACAiACICAAAAICIAIgIAAAAgIgAiAgAAACAiAAAAAAAAICIAAAAAAAAgIgAAAAAAACAiAAAAAAAAICIAAAAAAAAgIgAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "F"
     },
     "song1": {
         "data": "0078000408010100001c00010a006400f4016400000400000000000000000000000000050000040c00000001000125010002000127",

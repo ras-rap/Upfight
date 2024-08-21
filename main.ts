@@ -1,36 +1,186 @@
 namespace SpriteKind {
     export const Background = SpriteKind.create()
     export const Button = SpriteKind.create()
-    export const button2 = SpriteKind.create()
+    export const Button2 = SpriteKind.create()
+    export const Text = SpriteKind.create()
 }
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+
+controller.left.onEvent(ControllerButtonEvent.Pressed, function on_left_pressed() {
+    
     if (Button_selected == 1) {
-        Play_button.setImage(assets.image`Play button selected`)
-        Multiplayer_button.setImage(assets.image`Multiplayer button`)
-        music.play(music.createSong(assets.song`Ding`), music.PlaybackMode.InBackground)
+        Play_button.setImage(assets.image`
+            Play button selected
+        `)
+        Multiplayer_button.setImage(assets.image`
+            Multiplayer button
+        `)
+        music.play(music.createSong(assets.song`
+                Ding
+            `), music.PlaybackMode.InBackground)
         Button_selected = 0
     }
+    
 })
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+function WriteText(text: string, x: number, y: number) {
+    let char_sprite: Sprite;
+    let char: string;
+    
+    char_width = 16
+    //  Width of each character sprite (adjust as needed)
+    console.logValue("Len", text.length)
+    while (i <= text.length - 1) {
+        char_sprite = sprites.create(assets.image`
+            period
+        `, SpriteKind.Text)
+        //  Determine the character to use for the image
+        char = text[i]
+        //  Convert to uppercase for consistency
+        if (char == "A") {
+            char_sprite.setImage(assets.image`
+                A
+            `)
+        } else if (char == "B") {
+            char_sprite.setImage(assets.image`
+                B
+            `)
+        } else if (char == "C") {
+            char_sprite.setImage(assets.image`
+                C
+            `)
+        } else if (char == "D") {
+            char_sprite.setImage(assets.image`
+                D
+            `)
+        } else if (char == "E") {
+            char_sprite.setImage(assets.image`
+                E
+            `)
+        } else if (char == "F") {
+            char_sprite.setImage(assets.image`
+                F
+            `)
+        } else if (char == "G") {
+            char_sprite.setImage(assets.image`
+                G
+            `)
+        } else if (char == "H") {
+            char_sprite.setImage(assets.image`
+                H
+            `)
+        } else if (char == "I") {
+            char_sprite.setImage(assets.image`
+                I
+            `)
+        } else if (char == "J") {
+            char_sprite.setImage(assets.image`
+                J
+            `)
+        } else if (char == "K") {
+            char_sprite.setImage(assets.image`
+                K
+            `)
+        } else if (char == "L") {
+            char_sprite.setImage(assets.image`
+                L
+            `)
+        } else if (char == "M") {
+            char_sprite.setImage(assets.image`
+                M
+            `)
+        } else if (char == "N") {
+            char_sprite.setImage(assets.image`
+                N
+            `)
+        } else if (char == "O") {
+            char_sprite.setImage(assets.image`
+                O
+            `)
+        } else if (char == "P") {
+            char_sprite.setImage(assets.image`
+                P
+            `)
+        } else if (char == "Q") {
+            char_sprite.setImage(assets.image`
+                Q
+            `)
+        } else if (char == "R") {
+            char_sprite.setImage(assets.image`
+                R
+            `)
+        } else if (char == "S") {
+            char_sprite.setImage(assets.image`
+                S
+            `)
+        } else if (char == "T") {
+            char_sprite.setImage(assets.image`
+                T
+            `)
+        } else if (char == "U") {
+            char_sprite.setImage(assets.image`
+                U
+            `)
+        } else if (char == "V") {
+            char_sprite.setImage(assets.image`
+                V
+            `)
+        } else if (char == "W") {
+            char_sprite.setImage(assets.image`
+                W
+            `)
+        } else if (char == "X") {
+            char_sprite.setImage(assets.image`
+                X
+            `)
+        } else if (char == "Y") {
+            char_sprite.setImage(assets.image`
+                Y
+            `)
+        } else if (char == "Z") {
+            char_sprite.setImage(assets.image`
+                Z
+            `)
+        } else {
+            //  Optionally handle non-alphabet characters
+            console.logValue("Unknown Char", char)
+            continue
+        }
+        
+        //  Position the sprite
+        char_sprite.left = x + i * char_width
+        char_sprite.top = y
+        console.logValue("Rendered", char)
+        console.logValue("Position", char_sprite.left + char_sprite.top)
+        i += 1
+    }
+}
+
+controller.right.onEvent(ControllerButtonEvent.Pressed, function on_right_pressed() {
+    
     if (Button_selected == 0) {
-        Play_button.setImage(assets.image`Play button`)
-        Multiplayer_button.setImage(assets.image`Multiplayer button selected`)
-        music.play(music.createSong(assets.song`Ding`), music.PlaybackMode.InBackground)
+        Play_button.setImage(assets.image`
+            Play button
+        `)
+        Multiplayer_button.setImage(assets.image`
+            Multiplayer button selected
+        `)
+        music.play(music.createSong(assets.song`
+                Ding
+            `), music.PlaybackMode.InBackground)
         Button_selected = 1
     }
+    
 })
+let i = 0
+let char_width = 0
+let Multiplayer_button : Sprite = null
+let Play_button : Sprite = null
 let Button_selected = 0
-let Play_button: Sprite = null
-let Multiplayer_button: Sprite = null
-let BG = sprites.create(assets.image`Background`, SpriteKind.Background)
-BG.setScale(10, ScaleAnchor.Middle)
-Multiplayer_button = sprites.create(assets.image`Multiplayer button`, SpriteKind.button2)
-Multiplayer_button.setScale(3, ScaleAnchor.Middle)
-Multiplayer_button.setPosition(114, 100)
-Play_button = sprites.create(assets.image`Play button selected`, SpriteKind.Button)
-Play_button.setPosition(46, 100)
-Play_button.setScale(3, ScaleAnchor.Middle)
-Button_selected = 0
-game.onUpdate(function () {
-	
+let start_bg = sprites.create(assets.image`
+    bg start
+`, SpriteKind.Background)
+start_bg.setScale(10, ScaleAnchor.Middle)
+WriteText("ABCDEFGHI", 0, 50)
+WriteText("JKLMNOPQRSTUVWXYZ", -140, 80)
+game.onUpdate(function on_on_update() {
+    
 })
