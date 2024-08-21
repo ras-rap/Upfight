@@ -174,10 +174,21 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "F"
     },
+    "image34": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Space"
+    },
     "song1": {
         "data": "0078000408010100001c00010a006400f4016400000400000000000000000000000000050000040c00000001000125010002000127",
         "mimeType": "application/mkcd-song",
         "displayName": "Ding",
+        "namespace": "mySongs."
+    },
+    "song2": {
+        "data": "0078000408020104001c00100500640000041e000004000000000000000000000000000a0400040600000001000127",
+        "mimeType": "application/mkcd-song",
+        "displayName": "error",
         "namespace": "mySongs."
     },
     "*": {

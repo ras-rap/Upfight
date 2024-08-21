@@ -5,9 +5,15 @@ namespace SpriteKind {
     export const Text = SpriteKind.create()
 }
 
+function delete_all_text() {
+    for (let sprite of sprites.allOfKind(SpriteKind.Text)) {
+        sprites.destroy(sprite, effects.disintegrate, 500)
+    }
+}
+
 controller.left.onEvent(ControllerButtonEvent.Pressed, function on_left_pressed() {
     
-    if (Button_selected == 1) {
+    if (Button_selected2 == 1) {
         Play_button.setImage(assets.image`
             Play button selected
         `)
@@ -17,11 +23,11 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function on_left_pressed(
         music.play(music.createSong(assets.song`
                 Ding
             `), music.PlaybackMode.InBackground)
-        Button_selected = 0
+        Button_selected2 = 0
     }
     
 })
-function WriteText(text: string, x: number, y: number) {
+function WriteText(text: string, x: number, y: number, scale: number) {
     let char_sprite: Sprite;
     let char: string;
     
@@ -139,6 +145,10 @@ function WriteText(text: string, x: number, y: number) {
             char_sprite.setImage(assets.image`
                 Z
             `)
+        } else if (char == " ") {
+            char_sprite.setImage(assets.image`
+                Space
+            `)
         } else {
             //  Optionally handle non-alphabet characters
             console.logValue("Unknown Char", char)
@@ -151,36 +161,54 @@ function WriteText(text: string, x: number, y: number) {
         console.logValue("Rendered", char)
         console.logValue("Position", char_sprite.left + char_sprite.top)
         i += 1
+        char_sprite.setScale(scale, ScaleAnchor.Middle)
     }
 }
 
 controller.right.onEvent(ControllerButtonEvent.Pressed, function on_right_pressed() {
     
-    if (Button_selected == 0) {
+    if (Button_selected2 == 0) {
         Play_button.setImage(assets.image`
-            Play button
+            Play button selected
         `)
         Multiplayer_button.setImage(assets.image`
-            Multiplayer button selected
+            Multiplayer button
         `)
         music.play(music.createSong(assets.song`
-                Ding
+                error
             `), music.PlaybackMode.InBackground)
-        Button_selected = 1
+        Button_selected2 = 0
     }
     
 })
 let i = 0
 let char_width = 0
-let Multiplayer_button : Sprite = null
+let Button_selected2 = 0
 let Play_button : Sprite = null
+let Multiplayer_button : Sprite = null
 let Button_selected = 0
+let BG = sprites.create(assets.image`
+    Background
+`, SpriteKind.Background)
+Multiplayer_button = sprites.create(assets.image`
+        Multiplayer button
+    `, SpriteKind.Button)
+Multiplayer_button.setScale(3, ScaleAnchor.Middle)
+Multiplayer_button.setPosition(114, 100)
+Play_button = sprites.create(assets.image`
+        Play button selected
+    `, SpriteKind.Button)
+Play_button.setPosition(46, 100)
+Play_button.setScale(3, ScaleAnchor.Middle)
 let start_bg = sprites.create(assets.image`
     bg start
 `, SpriteKind.Background)
 start_bg.setScale(10, ScaleAnchor.Middle)
-WriteText("ABCDEFGHI", 0, 50)
-WriteText("JKLMNOPQRSTUVWXYZ", -140, 80)
+WriteText("WIP", 60, 53, 1)
+pause(5000)
+sprites.destroy(start_bg, effects.disintegrate, 500)
+delete_all_text()
+BG.setScale(10, ScaleAnchor.Middle)
 game.onUpdate(function on_on_update() {
     
 })
