@@ -6,22 +6,28 @@ class SpriteKind:
     Text = SpriteKind.create()
 def delete_all_text():
     for sprite in sprites.all_of_kind(SpriteKind.Text):
-        sprites.destroy(sprite, effects.disintegrate, 500)
+        sprites.destroy(sprite)
+
+def delete_all_text_effect():
+    for sprite in sprites.all_of_kind(SpriteKind.Text):
+        sprites.destroy(sprite, effects.disintegrate, 500)        
 
 def on_left_pressed():
     global Button_selected2
-    if Button_selected2 == 1:
-        Play_button.set_image(assets.image("""
-            Play button selected
-        """))
-        Multiplayer_button.set_image(assets.image("""
-            Multiplayer button
-        """))
-        music.play(music.create_song(assets.song("""
-                Ding
-            """)),
-            music.PlaybackMode.IN_BACKGROUND)
-        Button_selected2 = 0
+    if menu == True:
+        if Button_selected2 == 1:
+            Play_button.set_image(assets.image("""
+                Play button selected
+            """))
+            Multiplayer_button.set_image(assets.image("""
+                Multiplayer button
+            """))
+            music.play(music.create_song(assets.song("""
+                    Ding
+                """)),
+                music.PlaybackMode.IN_BACKGROUND)
+            Button_selected2 = 0
+            console.log_value("Button", "Play")
 controller.left.on_event(ControllerButtonEvent.PRESSED, on_left_pressed)
 
 def WriteText(text: str, x: number, y: number, scale: number):
@@ -160,18 +166,20 @@ def WriteText(text: str, x: number, y: number, scale: number):
 
 def on_right_pressed():
     global Button_selected2
-    if Button_selected2 == 0:
-        Play_button.set_image(assets.image("""
-            Play button selected
-        """))
-        Multiplayer_button.set_image(assets.image("""
-            Multiplayer button
-        """))
-        music.play(music.create_song(assets.song("""
-                error
-            """)),
-            music.PlaybackMode.IN_BACKGROUND)
-        Button_selected2 = 0
+    if menu == True:
+        if Button_selected2 == 0:
+            Play_button.set_image(assets.image("""
+                Play button
+            """))
+            Multiplayer_button.set_image(assets.image("""
+                Multiplayer button selected
+            """))
+            music.play(music.create_song(assets.song("""
+                    Ding
+                """)),
+                music.PlaybackMode.IN_BACKGROUND)
+            Button_selected2 = 1
+            console.log_value("Button", "Multiplayer")
 controller.right.on_event(ControllerButtonEvent.PRESSED, on_right_pressed)
 
 i = 0
@@ -180,6 +188,7 @@ Button_selected2 = 0
 Play_button: Sprite = None
 Multiplayer_button: Sprite = None
 Button_selected = 0
+menu = True
 BG = sprites.create(assets.image("""
     Background
 """), SpriteKind.Background)
@@ -200,7 +209,7 @@ start_bg.set_scale(10, ScaleAnchor.MIDDLE)
 WriteText("RAS", 58, 53, 1)
 pause(2000)
 sprites.destroy(start_bg, effects.disintegrate, 500)
-delete_all_text()
+delete_all_text_effect()
 BG.set_scale(10, ScaleAnchor.MIDDLE)
 BG.set_position(80, 47)
 WriteText("   UPFIGHT", -20, 10, 1)
@@ -210,9 +219,30 @@ WriteText("              SOON", -140, 60, 1)
 def on_on_update():
     pass
     
+def start_game():
+    delete_all_text()
+    sprites.destroy(BG)
+    sprites.destroy(Play_button)
+    sprites.destroy(Multiplayer_button)
+    global Button_selected2
+    Button_selected2 == 3
+    global menu
+    menu = False
+
+
+
 def on_event_pressed():
-    if Button_selected2 == 0:
-        console.log_value("Play buttton pressed", True)
+    if menu == True:
+        if Button_selected2 == 0:
+            console.log_value("Play buttton pressed", True)
+            start_game()
+        elif Button_selected2 == 1:
+            console.log_value("Multiplayer buttton pressed", True)
+            music.play(music.create_song(assets.song("""
+                            error
+                        """)),
+                        music.PlaybackMode.IN_BACKGROUND)
+
 
 controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
 game.on_update(on_on_update)

@@ -7,23 +7,33 @@ namespace SpriteKind {
 
 function delete_all_text() {
     for (let sprite of sprites.allOfKind(SpriteKind.Text)) {
+        sprites.destroy(sprite)
+    }
+}
+
+function delete_all_text_effect() {
+    for (let sprite of sprites.allOfKind(SpriteKind.Text)) {
         sprites.destroy(sprite, effects.disintegrate, 500)
     }
 }
 
 controller.left.onEvent(ControllerButtonEvent.Pressed, function on_left_pressed() {
     
-    if (Button_selected2 == 1) {
-        Play_button.setImage(assets.image`
-            Play button selected
-        `)
-        Multiplayer_button.setImage(assets.image`
-            Multiplayer button
-        `)
-        music.play(music.createSong(assets.song`
-                Ding
-            `), music.PlaybackMode.InBackground)
-        Button_selected2 = 0
+    if (menu == true) {
+        if (Button_selected2 == 1) {
+            Play_button.setImage(assets.image`
+                Play button selected
+            `)
+            Multiplayer_button.setImage(assets.image`
+                Multiplayer button
+            `)
+            music.play(music.createSong(assets.song`
+                    Ding
+                `), music.PlaybackMode.InBackground)
+            Button_selected2 = 0
+            console.logValue("Button", "Play")
+        }
+        
     }
     
 })
@@ -167,17 +177,21 @@ function WriteText(text: string, x: number, y: number, scale: number) {
 
 controller.right.onEvent(ControllerButtonEvent.Pressed, function on_right_pressed() {
     
-    if (Button_selected2 == 0) {
-        Play_button.setImage(assets.image`
-            Play button selected
-        `)
-        Multiplayer_button.setImage(assets.image`
-            Multiplayer button
-        `)
-        music.play(music.createSong(assets.song`
-                error
-            `), music.PlaybackMode.InBackground)
-        Button_selected2 = 0
+    if (menu == true) {
+        if (Button_selected2 == 0) {
+            Play_button.setImage(assets.image`
+                Play button
+            `)
+            Multiplayer_button.setImage(assets.image`
+                Multiplayer button selected
+            `)
+            music.play(music.createSong(assets.song`
+                    Ding
+                `), music.PlaybackMode.InBackground)
+            Button_selected2 = 1
+            console.logValue("Button", "Multiplayer")
+        }
+        
     }
     
 })
@@ -187,6 +201,7 @@ let Button_selected2 = 0
 let Play_button : Sprite = null
 let Multiplayer_button : Sprite = null
 let Button_selected = 0
+let menu = true
 let BG = sprites.create(assets.image`
     Background
 `, SpriteKind.Background)
@@ -205,15 +220,35 @@ start_bg.setScale(10, ScaleAnchor.Middle)
 WriteText("RAS", 58, 53, 1)
 pause(2000)
 sprites.destroy(start_bg, effects.disintegrate, 500)
-delete_all_text()
+delete_all_text_effect()
 BG.setScale(10, ScaleAnchor.Middle)
 BG.setPosition(80, 47)
 WriteText("   UPFIGHT", -20, 10, 1)
 WriteText("          PLAY", -150, 60, 1)
 WriteText("              SOON", -140, 60, 1)
+function start_game() {
+    delete_all_text()
+    sprites.destroy(BG)
+    sprites.destroy(Play_button)
+    sprites.destroy(Multiplayer_button)
+    
+    Button_selected2 == 3
+    
+    menu = false
+}
+
 controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
-    if (Button_selected2 == 0) {
-        console.logValue("Play buttton pressed", true)
+    if (menu == true) {
+        if (Button_selected2 == 0) {
+            console.logValue("Play buttton pressed", true)
+            start_game()
+        } else if (Button_selected2 == 1) {
+            console.logValue("Multiplayer buttton pressed", true)
+            music.play(music.createSong(assets.song`
+                            error
+                        `), music.PlaybackMode.InBackground)
+        }
+        
     }
     
 })
