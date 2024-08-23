@@ -240,6 +240,26 @@ function start_game() {
         `, SpriteKind.Button)
     controller.moveSprite(Glorb)
     Glorb.setStayInScreen(true)
+    scene.cameraFollowSprite(Glorb)
+    tiles.setCurrentTilemap(tilemap`level1`)
+    tiles.setTileAt(tiles.getTileLocation(0, 0), img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `)
 }
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {

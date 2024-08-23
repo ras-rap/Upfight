@@ -235,6 +235,26 @@ def start_game():
     controller.move_sprite(Glorb)
     Glorb.set_stay_in_screen(True)
     
+    scene.camera_follow_sprite(Glorb)
+    tiles.set_current_tilemap(tilemap("""level1"""))
+    tiles.set_tile_at(tiles.get_tile_location(0, 0), img("""
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    """))
 def on_event_pressed():
     if menu == True:
         if Button_selected2 == 0:
