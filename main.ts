@@ -235,6 +235,11 @@ function start_game() {
     Button_selected2 == 3
     
     menu = false
+    let Glorb = sprites.create(assets.image`
+            Glorb
+        `, SpriteKind.Button)
+    controller.moveSprite(Glorb)
+    Glorb.setStayInScreen(true)
 }
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {

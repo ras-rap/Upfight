@@ -228,9 +228,13 @@ def start_game():
     Button_selected2 == 3
     global menu
     menu = False
-
-
-
+    Glorb = sprites.create(assets.image("""
+            Glorb
+        """),
+        SpriteKind.Button)
+    controller.move_sprite(Glorb)
+    Glorb.set_stay_in_screen(True)
+    
 def on_event_pressed():
     if menu == True:
         if Button_selected2 == 0:
